@@ -3,13 +3,15 @@
         <h2 class="title">Historial</h2>
         
         <div class="content">
-            <div class="head">
-                <Movement 
-                    v-for="movement in movements" 
-                    :key="movement.id"
-                    :title="movement.title"
-                />
-            </div>
+            <Movement 
+                v-for="{ id, title, description, amount } in movements" 
+                :key="id"
+                :id="id"
+                :title="title"
+                :description="description"
+                :amount="amount"
+                @remove="remove"
+            />
         </div>
     </div>
 </template>
@@ -26,6 +28,9 @@
     });
 
     const { movements } = toRefs(props);
+    const remove = (id) => {
+        console.log(`Remove movement with id: ${id}`);
+    };
 </script>
 
 <style scoped>
