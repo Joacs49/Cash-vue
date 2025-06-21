@@ -6,8 +6,16 @@
         </div>
 
         <div class="action">
-            <img src="@/assets/trash-icon.svg" alt="Borrar" @click="remove" />
-            <p :class="{ 'red' : isNegative, 'green' : !isNegative}">{{ amountCurrency }}</p>
+            <img 
+                src="@/assets/trash-icon.svg" 
+                alt="Borrar" 
+                @click="remove" 
+            />
+            <p 
+                :class="{ 'red' : isNegative, 'green' : !isNegative}"
+            >
+                {{ amountCurrency }}
+            </p>
         </div>
     </div>
 </template>
